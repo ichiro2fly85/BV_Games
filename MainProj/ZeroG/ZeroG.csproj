@@ -30,4 +30,38 @@
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <None Include="Scripts\.DS_Store" />
+    <None Include="Scripts\Enemy.meta" />
+    <None Include="Scripts\GUI.meta" />
+    <None Include="Scripts\System.meta" />
+    <None Include="Scripts\ThePlayer.meta" />
+    <None Include="Scripts\Triggers.meta" />
+    <None Include="Scripts\Enemy\EnemyMaster.cs.meta" />
+    <None Include="Scripts\GUI\WinGUI.cs.meta" />
+    <None Include="Scripts\GUI\lossGUI.cs.meta" />
+    <None Include="Scripts\System\Damage.cs.meta" />
+    <None Include="Scripts\System\Entity.cs.meta" />
+    <None Include="Scripts\System\GameSystem.cs.meta" />
+    <None Include="Scripts\System\Points.cs.meta" />
+    <None Include="Scripts\System\Score.cs.meta" />
+    <None Include="Scripts\System\Sensor.cs.meta" />
+    <None Include="Scripts\ThePlayer\Player.cs.meta" />
+    <None Include="Scripts\ThePlayer\bulletScript.cs.meta" />
+    <None Include="Scripts\Triggers\winTrigger.cs.meta" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Scripts\Enemy\EnemyMaster.cs" />
+    <Compile Include="Scripts\GUI\WinGUI.cs" />
+    <Compile Include="Scripts\GUI\lossGUI.cs" />
+    <Compile Include="Scripts\System\Damage.cs" />
+    <Compile Include="Scripts\System\Entity.cs" />
+    <Compile Include="Scripts\System\GameSystem.cs" />
+    <Compile Include="Scripts\System\Points.cs" />
+    <Compile Include="Scripts\System\Score.cs" />
+    <Compile Include="Scripts\System\Sensor.cs" />
+    <Compile Include="Scripts\ThePlayer\Player.cs" />
+    <Compile Include="Scripts\ThePlayer\bulletScript.cs" />
+    <Compile Include="Scripts\Triggers\winTrigger.cs" />
+  </ItemGroup>
 </Project>
