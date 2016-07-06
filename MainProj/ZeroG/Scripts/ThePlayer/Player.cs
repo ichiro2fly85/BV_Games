@@ -38,7 +38,7 @@ public class Player : MonoBehaviour {
 
 
 
-
+	//Controls
 	public void Controls()
 	{
 
