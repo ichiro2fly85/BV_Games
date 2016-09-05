@@ -1,34 +1,29 @@
+﻿
 using UnityEngine;
 using System.Collections;
 
-public class Player : MonoBehaviour {
+public class Ninja : MonoBehaviour {
 
 
 	// Variables
 	private int points = 0;
 	public int speed;
-	private float dmgprcent = 0.0f;
-	private int currentDir;
+	protected int ninjaHealth = 1000;
 	private Animator animator;
 	private Rigidbody2D myRig;
 	private Vector2 vect;
-	private Vector2 vect2;
-	private GameObject playerobj;
-	public GameObject bullet;
-	private static bool isHit;
-	private static bool isfroze;
+	private GameObject playerObj;
 	public float xMovement;
 	public float yMovement;
 	private bool isRight;
 
 
 
-	
+
 	void Start () 
 	{
 		myRig = GetComponent<Rigidbody2D> ();
 		animator = GetComponent<Animator>();
-		animator.SetInteger ("state", 1);
 	}
 
 	void Update () 
@@ -51,39 +46,15 @@ public class Player : MonoBehaviour {
 
 
 		//Move up
-		if (Input.GetKey(KeyCode.W))
-		{
-			animator.SetInteger ("blah", 1);
-		}
-		else
-		{
-			animator.SetInteger ("blah", 0);
-		}
 
-		if(yMovement > 0)
-		{faceUp();}
 		if(yMovement > 0.3)
 		{
 
 			myRig.velocity = new Vector2(myRig.velocity.x, speed);
 		}
 
-		//Move down
-		if (Input.GetButton("back"))
-		{
-			animator.SetInteger ("state", 2);
-		}
-		else
-		{
-			animator.SetInteger ("state", 0);
-		}
+		//Move down						
 
-
-		if (yMovement < 0) 
-		{				
-			faceDown ();
-		}					
-				
 		if(yMovement < -0.3)
 		{
 
@@ -92,26 +63,13 @@ public class Player : MonoBehaviour {
 
 		//Move left
 
-		if (Input.GetButton("left"))
-		{
-			animator.SetInteger ("state", 3);
-		}
-
-		if(xMovement < 0)
-		{faceLeft();}
 		if(xMovement  < -0.3)
 		{	
 			myRig.velocity = new Vector2(-speed, myRig.velocity.y);			
 		}
 
 		//Move right
-		if (Input.GetButton("right"))
-		{
-			animator.SetInteger ("state", 4);
-		}
 
-		if(xMovement > 0)
-		{faceRight();}
 		if(xMovement > 0.3)
 		{
 			myRig.velocity = new Vector2(speed, myRig.velocity.y);
@@ -119,49 +77,31 @@ public class Player : MonoBehaviour {
 
 
 
-		
-		if (Input.GetKeyDown(KeyCode.Space))
-		{
-			if(isfroze)
-			{
-				return;
-			}
-			else
-			{
-				if(isRight)
-				{
-					animator.SetTrigger("bomb");
-				}
-				else
-				{
-					animator.SetTrigger("bomb2");
-				}
-				Instantiate(bullet, transform.position, Quaternion.identity);
-			}
-		}
-		//-----------------------------------------------End of Controls
-		
-			if (isfroze) 
-			{
-				freezePlayer ();
-			}	
-			else
-			{
-				unfreezePlayer();
-			}
-				
-			
 
-			if (isHit)
-			{
-				tookDamage();
-				isHit = false;
-				
-			}				
-			
-		bulletScript.getplayerDirection(currentDir);
+
+		//-----------------------------------------------End of Controls
+
+		if (isfroze) 
+		{
+			freezePlayer ();
+		}	
+		else
+		{
+			unfreezePlayer();
+		}
+
+
+
+		if (isHit)
+		{
+			tookDamage();
+			isHit = false;
+
+		}				
+
+
 	}
-	
+
 	//Handing player freeze------------------------------------->>
 	public static bool frozen(bool fr)
 	{
@@ -184,28 +124,28 @@ public class Player : MonoBehaviour {
 
 
 	//Handling Damage Start------------------------------------->>
-	public float currentDamage()
+	public float currentHealth()
 	{
-		return dmgprcent;
+		return ninjaHealth;
 	}
 
-	public float addDamage(float x)
+	public float addDamage(int x)
 	{
-		dmgprcent += x;
-		return dmgprcent;
+		ninjaHealth -= x;
+		return ninjaHealth;
 	}
 
 	public void tookDamage()
 	{
-		if (dmgprcent == 100) 
+		if (ninjaHealth == 0) 
 		{
 			//YOU LOSE
 			return;
 		}
 		else
 		{
-			addDamage(10.0f);
-			Damage.addglobalDamage(currentDamage());
+			addDamage(100);
+			//Global.addPlayerDamage(currentHealth());
 		}
 		return;
 	}
@@ -228,45 +168,12 @@ public class Player : MonoBehaviour {
 
 	//Handling Point System End---------------------------------->>
 
-
 	public static bool gotHit(bool h)
 	{
-
 		isHit = h;
 		return isHit;
 
 	}
-
-	private void faceUp()
-	{
-
-		currentDir = 1;
-
-	}
-
-	private void faceLeft()
-	{
-		//Animation
-		isRight = false;
-		currentDir = 2;
-	}
-
-	private void faceRight()
-	{
-		//Animation
-		isRight = true;
-		currentDir = 3;
-	}
-
-	private void faceDown()
-	{
-		//Animation
-		currentDir = 4;
-
-	}
-
-
-
 
 
 

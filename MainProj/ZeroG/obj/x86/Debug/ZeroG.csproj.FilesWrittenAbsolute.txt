@@ -1,0 +1,1 @@
+/Users/LoneWolf/Documents/BV_Games/MainProj/ZeroG/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
