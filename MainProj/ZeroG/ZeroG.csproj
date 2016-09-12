@@ -63,5 +63,12 @@
     <Compile Include="Scripts\ThePlayer\Player.cs" />
     <Compile Include="Scripts\ThePlayer\bulletScript.cs" />
     <Compile Include="Scripts\Triggers\winTrigger.cs" />
+    <Compile Include="Global.cs" />
+    <Compile Include="BattleSystem.cs" />
+    <Compile Include="SaveFile.cs" />
+    <Compile Include="LoadFile.cs" />
+    <Compile Include="Jun.cs" />
+    <Compile Include="Wing.cs" />
+    <Compile Include="Tiger.cs" />
   </ItemGroup>
 </Project>
