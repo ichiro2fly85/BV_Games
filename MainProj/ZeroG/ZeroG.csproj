@@ -70,5 +70,8 @@
     <Compile Include="Jun.cs" />
     <Compile Include="Wing.cs" />
     <Compile Include="Tiger.cs" />
+    <Compile Include="IncreaseExperience.cs" />
+    <Compile Include="LevelUp.cs" />
+    <Compile Include="NewLevel.cs" />
   </ItemGroup>
 </Project>

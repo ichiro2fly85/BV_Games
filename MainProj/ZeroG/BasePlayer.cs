@@ -11,15 +11,19 @@ public class BasePlayer : MonoBehaviour {
     protected GameObject ninjaObj;
     protected float xMovement;
     protected float yMovement;
+	protected bool hasSaveFile;
 
     //Stats
     private string ninjaName;
     private string ninjaDescription;
-    private int experincePoints;
+    private int playerLevel;
+    private float experincePoints;
+	private int requiredXP;
     private int maxHealthPoints;
     private int currentHP;
     private int attackPoints;
     private int defensePoints;
+	private int techniquePoints;
     private int walkSpeed;
 
     
@@ -36,13 +40,25 @@ public class BasePlayer : MonoBehaviour {
         set { ninjaDescription = value; }
     }
 
+    public int PlayerLevel
+    {
+        get { return playerLevel; }
+        set { playerLevel = value; }
+    }
+
     public int ExperiencePoints
     {
         get { return experincePoints; }
         set { experincePoints = value; }
     }
 
-    public int MaxHealthPoints
+	public int RequiredXP
+	{
+		get { return RequiredXP; }
+		set { RequiredXP = value; }
+	}
+
+    public int MaxHP
     {
         get { return maxHealthPoints; }
         set { maxHealthPoints = value; }
@@ -66,12 +82,22 @@ public class BasePlayer : MonoBehaviour {
         set { defensePoints = value; }
     }
 
+	public int TechniquePoints
+	{
+		get { return techniquePoints; }
+		set { techniquePoints = value; }
+	}
+
     public int WalkSpeed
     {
         get { return walkSpeed; }
         set { walkSpeed = value; }
     }
 
+	public bool HasSaveFile
+	{
+		get { return hasSaveFile; }
+	}
     
 
     //Controls
@@ -111,6 +137,30 @@ public class BasePlayer : MonoBehaviour {
         {
             myRig.velocity = new Vector2(walkSpeed, myRig.velocity.y);
         }
+
+
+    }
+
+    //Store curent character information in Global values aka Save the game.
+    protected void storeCurrentNinjaInfo()
+    {
+
+        Global.PlayerLevel = PlayerLevel;
+        Global.ExperiencePoints = ExperiencePoints;
+        Global.MaxHP = MaxHP;
+        Global.AttackPoints = AttackPoints;
+        Global.DefensePoints = DefensePoints;
+           
+        Debug.Log(Global.CurrentNinja);
+        Debug.Log(Global.PlayerLevel);
+        Debug.Log(Global.ExperiencePoints);
+        Debug.Log(Global.MaxHP);
+        Debug.Log(Global.AttackPoints);
+        Debug.Log(Global.DefensePoints);
+
+		if (hasSaveFile == false) {
+			hasSaveFile = true;
+		}
 
 
     }

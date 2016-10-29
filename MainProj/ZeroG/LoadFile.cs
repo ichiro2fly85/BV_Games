@@ -13,6 +13,8 @@ public class LoadFile {
 		Global.MaxHP = PlayerPrefs.GetString ("MAXHEALTHPOINTS");
 		Global.AttackPoints = PlayerPrefs.GetString ("ATTACKPOINTS");
 		Global.DefensePoints = PlayerPrefs.GetString ("DEFENSEPOINTS");
+		Global.TechPoints = PlayerPrefs.GetString ("TECHNIQUEPOINTS");
+
 
 
 
