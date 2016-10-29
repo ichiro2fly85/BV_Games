@@ -13,6 +13,8 @@ public class SaveFile {
 		PlayerPrefs.SetInt ("MAXHEALTHPOINTS", Global.MaxHP);
 		PlayerPrefs.SetInt ("ATTACKPOINTS", Global.AttackPoints);
 		PlayerPrefs.SetInt ("DEFENSEPOINTS", Global.DefensePoints);
+		PlayerPrefs.SetInt ("TECHNIQUEPOINTS", Global.TechPoints);
+
 
 
 

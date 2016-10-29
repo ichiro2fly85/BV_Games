@@ -1,12 +1,20 @@
 ﻿<Properties StartupItem="ZeroG.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../../Ninja.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Razor.cs">
     <Files>
-      <File FileName="../../Ninja.cs" Line="14" Column="23" />
+      <File FileName="Global.cs" Line="19" Column="20" />
+      <File FileName="LoadFile.cs" Line="16" Column="56" />
+      <File FileName="SaveFile.cs" Line="8" Column="41" />
+      <File FileName="BasePlayer.cs" Line="135" Column="3" />
+      <File FileName="Razor.cs" Line="31" Column="22" />
+      <File FileName="IncreaseExperience.cs" Line="13" Column="4" />
+      <File FileName="NewLevel.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/LoneWolf/Documents/BV_Games/MainProj/ZeroG/BattleSystem.cs" line="105" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
